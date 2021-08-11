@@ -1,6 +1,6 @@
 {
   "name": "create-simple-projects",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create simple project with ts, jest, eslint, prettier and other stuff.",
   "main": "dist/index.js",
   "bin": {
