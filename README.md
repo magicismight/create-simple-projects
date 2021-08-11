@@ -6,7 +6,11 @@
 
 Create a new project based on template.
 
-`npx csp`
+`npx create-simple-projects`
+
+Or
+
+`npm i create-simple-projects - g && npx csp`
 
 ## Options
 
