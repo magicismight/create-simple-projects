@@ -3,16 +3,12 @@
     "rootDir": "src",
     "outDir": "dist",
     "target": "es5",
-    "lib": ["es6", "dom"],
-    "sourceMap": false,
+    "lib": ["es6"],
     "allowJs": false,
     "moduleResolution": "node",
     "strictNullChecks": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "templates"
-  ]
+  "include": ["src"]
 }
