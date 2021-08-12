@@ -8,11 +8,11 @@
     "name": "<%= AUTHOR %>"
   },
   "scripts": {
-    "test": "jest",
-    "build": "run-s clean && run-p build:cjs build:esm",
+    "test": "jest --coverage",
+    "build": "run-s test clean && run-p build:cjs build:esm",
     "build:cjs": "tsc --module commonjs --declaration --outDir ./dist/lib",
     "build:esm": "tsc --module esnext --declaration --outDir ./dist/esm",
-    "prepublishOnly": "npm run check:ci && npm run build",
+    "prepublishOnly": "npm run build",
     "clean": "rm -rf dist"
   },
   "keywords": [
