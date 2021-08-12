@@ -5,7 +5,7 @@ import { Answers } from './inquirer';
 export interface OptionPlaceholders {
   PROJECT_NAME: string;
   AUTHOR?: string;
-  KEYWORDS?: string;
+  KEYWORDS?: string[];
 }
 
 export interface Options {
@@ -26,7 +26,7 @@ export function createOptionsFromAnswers(answers: Answers): Options {
     placeholders: {
       PROJECT_NAME: name,
       AUTHOR: author,
-      KEYWORDS: keywords
+      KEYWORDS: keywords?.split(/\s+/)
     }
   };
 }

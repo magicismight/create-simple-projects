@@ -16,9 +16,7 @@
     "clean": "rm -rf dist"
   },
   "keywords": [
-    "template",
-    "typescript",
-    "starter"
+    "<%- KEYWORDS.join('\", \"') %>"
   ],
   "license": "ISC",
   "devDependencies": {
