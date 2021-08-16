@@ -21,7 +21,11 @@ function createFolder(path: string): boolean {
 const PlaceholderPattern = /\.ejs(\.[\w]+)$/;
 
 function isPlaceholderFile(file: string): boolean {
-  return file === 'package.json' || PlaceholderPattern.test(file);
+  return (
+    file === 'package.json' ||
+    file.toUpperCase() === 'LICENSE' ||
+    PlaceholderPattern.test(file)
+  );
 }
 
 function createFiles(
