@@ -6,7 +6,7 @@
   "module": "dist/esm/numbers.js",
   "scripts": {
     "test": "jest --coverage",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src --ext .ts",
     "build": "run-p test clean lint && run-p build:cjs build:esm",
     "build:cjs": "tsc --module commonjs --declaration --outDir ./dist/lib",
     "build:esm": "tsc --module esnext --declaration --outDir ./dist/esm",
