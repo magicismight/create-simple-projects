@@ -4,20 +4,15 @@
   "description": "A quick starter template for typescript project",
   "main": "dist/lib/numbers.js",
   "module": "dist/esm/numbers.js",
-  "author": {
-    "name": "<%= AUTHOR %>"
-  },
   "scripts": {
     "test": "jest --coverage",
-    "build": "run-s test clean && run-p build:cjs build:esm",
+    "lint": "eslint ./src",
+    "build": "run-p test clean lint && run-p build:cjs build:esm",
     "build:cjs": "tsc --module commonjs --declaration --outDir ./dist/lib",
     "build:esm": "tsc --module esnext --declaration --outDir ./dist/esm",
     "prepublishOnly": "npm run build",
     "clean": "rm -rf dist"
   },
-  "keywords": [
-    "<%- KEYWORDS.join('\", \"') %>"
-  ],
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.24",

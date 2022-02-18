@@ -8,8 +8,6 @@ const Choices = fs.readdirSync(path.join(__dirname, '../templates'));
 export interface Answers {
   template: string;
   name: string;
-  author?: string;
-  keywords?: string;
 }
 
 export const Questions: QuestionCollection<Answers>[] = [
@@ -32,18 +30,6 @@ export const Questions: QuestionCollection<Answers>[] = [
         return 'Project name may only include letters, numbers, underscores and hashes.';
       }
     }
-  },
-  {
-    name: 'author',
-    type: 'input',
-    message: 'Author name:',
-    when: () => !yargs.argv['author']
-  },
-  {
-    name: 'keywords',
-    type: 'input',
-    message: 'Keywords for project:',
-    when: () => !yargs.argv['keywords']
   }
 ];
 

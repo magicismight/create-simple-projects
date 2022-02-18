@@ -1,22 +1,18 @@
 {
-  "name": "test",
+  "name": "<%= PROJECT_NAME %>",
   "version": "0.0.0",
   "description": "A quick starter template for typescript project",
   "main": "dist/lib/numbers.js",
   "module": "dist/esm/numbers.js",
-  "author": {
-    "name": "<%= AUTHOR %>"
-  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "test": "jest --coverage",
+    "lint": "eslint ./src",
+    "build": "run-p test clean lint && tsc && vite build",
     "preview": "vite preview",
     "prepublishOnly": "npm run build",
     "clean": "rm -rf dist"
   },
-  "keywords": [
-    "<%- KEYWORDS.join('\", \"') %>"
-  ],
   "license": "ISC",
   "devDependencies": {
     "vite": "^2.8.0",
