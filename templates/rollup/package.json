@@ -1,0 +1,45 @@
+{
+  "name": "<%= PROJECT_NAME %>",
+  "version": "0.0.0",
+  "description": "A quick starter template for typescript project",
+  "main": "dist/lib/numbers.js",
+  "module": "dist/esm/numbers.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint ./src --ext .ts",
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.16.7",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
+    "eslint-config-alloy": "^4.2.0",
+    "husky": "4.3.8",
+    "jest": "^27.0.6",
+    "lint-staged": "9.4.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rollup": "^2.67.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

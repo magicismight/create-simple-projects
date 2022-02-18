@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "importHelpers": true,
+    "noEmit": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "lib": ["es2015", "dom"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
+}
