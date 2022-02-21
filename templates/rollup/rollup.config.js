@@ -1,6 +1,8 @@
 import typescript from '@rollup/plugin-typescript';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import commonjs from 'rollup-plugin-commonjs';
+import nodeResolve from 'rollup-plugin-node-resolve';
 
 export default {
   input: 'src/index.ts',
@@ -14,6 +16,19 @@ export default {
     babel({
       babelrc: true
     }),
-    terser()
+    terser({
+      format: {
+        comments: false
+      }
+    }),
+    commonjs({
+      include: ['node_modules/**'],
+      ignoreGlobal: false,
+      sourceMap: false
+    }),
+    nodeResolve({
+      jsnext: true,
+      main: false
+    })
   ]
 };
