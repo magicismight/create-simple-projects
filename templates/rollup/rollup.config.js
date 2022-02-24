@@ -3,6 +3,7 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import image from 'rollup-plugin-img';
 
 export default {
   input: 'src/index.ts',
@@ -29,6 +30,7 @@ export default {
     nodeResolve({
       jsnext: true,
       main: false
-    })
+    }),
+    image()
   ]
 };
